@@ -10,9 +10,10 @@ def split_dataset(dataset_dir, train_size=500):
     random.seed(42)
 
     # Iterate over each class directory
+    class_counter = 0
     for class_name in os.listdir(dataset_dir):
         class_dir = os.path.join(dataset_dir, class_name)
-        print(f"Processing {class_name}...")
+        print(f"Processing {class_name} as class {class_counter}")
         if os.path.isdir(class_dir):
             images = [os.path.join(class_dir, img) for img in os.listdir(class_dir)]
             random.shuffle(images)
@@ -23,9 +24,10 @@ def split_dataset(dataset_dir, train_size=500):
 
             # Add to train and test data lists
             for img in train_images:
-                train_data.append((img, class_name))
+                train_data.append((img, class_counter))
             for img in test_images:
-                test_data.append((img, class_name))
+                test_data.append((img, class_counter))
+        class_counter += 1
 
     return train_data, test_data
 

@@ -1,0 +1,10 @@
+# system files
+.DS_Store
+__pycache__/
+
+# data files
+dataset/*/
+*.zip
+
+# model
+*.pt

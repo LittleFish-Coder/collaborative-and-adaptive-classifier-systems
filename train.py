@@ -11,6 +11,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from argparse import ArgumentParser
 import pickle
+import numpy as np
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 class ImageDataset(Dataset):
     def __init__(self, dataset_dir='dataset', annotaion='train'):
@@ -32,7 +34,7 @@ class ImageDataset(Dataset):
 
     def __getitem__(self, idx):
         # Load the image
-        image = Image.open(self.image_paths[idx])
+        image = Image.open(self.image_paths[idx]).convert("RGB")
         image = self.transform(image)
         label = self.labels[idx]
         return image, label

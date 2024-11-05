@@ -33,7 +33,7 @@ class ImageDataset(Dataset):
 
     def __getitem__(self, idx):
         # Load the image
-        image = Image.open(self.image_paths[idx])
+        image = Image.open(self.image_paths[idx]).convert("RGB")
         image = self.transform(image)
         label = self.labels[idx]
         return image, label

@@ -5,6 +5,7 @@ __pycache__/
 # data files
 dataset/*/
 *.zip
+*.log
 
 # model
 *.pt

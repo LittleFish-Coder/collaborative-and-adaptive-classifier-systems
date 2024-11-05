@@ -1,3 +1,6 @@
+# This script is used to train the batch model for all classifiers with different hyperparameters
+# The training process is run in the background and the log is saved in the log file
+
 # SVM
 # C = [0.01, 0.1, 1, 10, 100]
 echo "train svm with C=0.01"

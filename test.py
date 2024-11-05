@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     # args
     parser = ArgumentParser()
-    parser.add_argument('--model_path', type=str, default='weights/svm_C_1.')
+    parser.add_argument('--model_path', type=str, default='weights/svm_C_1.pkl')
     args = parser.parse_args()
 
     # show arguments
